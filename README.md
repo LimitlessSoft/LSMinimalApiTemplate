@@ -1,5 +1,7 @@
 Template project used to build `LSMinimalApiTemplate` nuget template package
 
+To use template, download nuget template (`dotnet new install LSMinimalApiTemplate`) and run `dotnet new LSMinimalApi -n "NameOfYourProject"`
+
 Before merging to master branch, make sure `LSMinimalApiTemplate.csproj`'s `PackageVersion` is updated.
 Once new changes are merged in master branch, new version of nuget package will be published to nuget.
 
