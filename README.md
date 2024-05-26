@@ -10,7 +10,7 @@ Best thing to do is create issue and discuss change there until someone create p
 Code merged into `master` is automatically packed and pushed to nuget
 
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/LimitlessSoft/LSMinimalApiTemplate/develop?label=Last%20develop%20commit)
-![GitHub Release](https://img.shields.io/github/v/release/LimitlessSoft/LSCorLSMinimalApiTemplate)
+![GitHub Release](https://img.shields.io/github/v/release/LimitlessSoft/LSMinimalApiTemplate)
 <br>
 ![Nuget](https://img.shields.io/nuget/v/LSMinimalApiTemplate?label=LSMinimalApi%20nuget)
 ![Nuget](https://img.shields.io/nuget/dt/LSMinimalApiTemplate?label=LSMinimalApi%20nuget)
