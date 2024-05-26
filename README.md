@@ -1,2 +1,4 @@
-<!-- Provide an overview of what your template package does and how to get started.
-Consider previewing the README before uploading (https://learn.microsoft.com/en-us/nuget/nuget-org/package-readme-on-nuget-org#preview-your-readme). -->
+Template project used to build `LSMinimalApi` nuget template package
+
+Before merging to master branch, make sure `LSMinimalApiTemplate.csproj`'s `PackageVersion` is updated.
+Once new changes are merged in master branch, new version of nuget package will be published to nuget.
