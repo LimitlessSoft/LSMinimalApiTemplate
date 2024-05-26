@@ -13,8 +13,5 @@ jobs:
       - name: Pack template
         run: dotnet pack -c Release
 
-      - name: List
-        run: ls
-
       - name: Publish template to nuget
-        run: dotnet nuget push bin/Release/*.npkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_KEY }} --skip-duplicate
+        run: dotnet nuget push bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_KEY }} --skip-duplicate
