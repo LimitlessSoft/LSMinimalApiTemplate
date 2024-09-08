@@ -1,6 +1,6 @@
 using MyProject.Contracts.Dtos.Users;
 using MyProject.Contracts.IManagers;
-using LSCommerce.Contracts.Entities;
+using MyProject.Contracts.Entities;
 using Microsoft.Extensions.Logging;
 using LSCore.Contracts.IManagers;
 using LSCore.Domain.Extensions;
