@@ -1,52 +1,37 @@
-using Lamar.Microsoft.DependencyInjection;
-using LSCore.Framework.Extensions.Lamar;
+using System.ComponentModel;
+using LSCore.DependencyInjection.Extensions;
 using MyProject.Contracts.Constants;
 using LSCore.Framework.Middlewares;
 using LSCore.Framework.Extensions;
 using MyProject.Repository;
-using LSCore.Domain;
-using Lamar;
 
 // Creating application builder
 var builder = WebApplication.CreateBuilder(args);
 
 // Load configuration from json file and environment variables
 builder.Configuration
-    .AddJsonFile(Constants.General.AppSettings, optional: false, reloadOnChange: true)
+    .AddJsonFile(Constants.General.AppSettings, optional: true, reloadOnChange: true)
     .AddEnvironmentVariables();
 
-// Using lamar as DI container
-builder.Host.UseLamar((_, registry) =>
-{
-    // All services registration should go here
-    
-    // Register configuration root
-    builder.Services.AddSingleton<IConfigurationRoot>(builder.Configuration);
-    
-    // Register services
-    registry.Scan(x =>
-    {
-        x.TheCallingAssembly();
-        x.AssembliesAndExecutablesFromApplicationBaseDirectory((a) => a.GetName().Name!.StartsWith("Sample.Minimal"));
-        
-        x.WithDefaultConventions();
-        x.LSCoreServicesLamarScan();
-    });
-    
-    // Register database
-    registry.RegisterDatabase(builder.Configuration);
+builder.Services.AddSingleton<IConfigurationRoot>(builder.Configuration);
 
-    registry.AddControllers();
-    registry.AddEndpointsApiExplorer();
-    registry.AddSwaggerGen();
+builder.AddLSCoreDependencyInjection((options) =>
+{
+    options.Scan.AssemblyAndExecutablesFromApplicationBaseDirectory(assembly => assembly?.GetName()?.Name?.StartsWith("MyProject") ?? false);
 });
 
-// Add dotnet logging
+// Register database
+builder.Services.RegisterDatabase(builder.Configuration);
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 builder.LSCoreAddLogging();
 
 var app = builder.Build();
 
-LSCoreDomainConstants.Container = app.Services.GetService<IContainer>();
+app.UseLSCoreDependencyInjection();
 
 // Add exception handling middleware
 // It is used to handle exceptions globally
