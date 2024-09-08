@@ -1,9 +1,13 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "author": "LimitlessSoft",
-    "classifications": [ "ConsolWebe" ],
+    "classifications": [ "Web", "API" ],
     "identity": "LSMinimalApi",
     "shortName": "LSMinimalApi",
-    "sourceName": "LSMinimalApi",
+    "sourceName": "MyProject",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
     "name": "LimitlessSoft Minima Api Template"
 }
