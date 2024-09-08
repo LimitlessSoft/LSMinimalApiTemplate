@@ -8,7 +8,7 @@ Once new changes are merged in master branch, new version of nuget package will 
 # Contribution
 To contribute fork this project, branch from `develop`, make change and make PR into `develop` branch
 Since there is no established protocol, your change may not be accepted.
-Best thing to do is create issue and discuss change there until someone create protocol for the contributiors.
+Best thing to do is create issue and discuss change there until someone create protocol for the contributors.
 Code merged into `master` is automatically packed and pushed to nuget
 
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/LimitlessSoft/LSMinimalApiTemplate/develop?label=Last%20develop%20commit)

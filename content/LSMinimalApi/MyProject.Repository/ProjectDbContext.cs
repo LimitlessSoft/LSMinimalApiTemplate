@@ -1,6 +1,6 @@
 using MyProject.Repository.EntityMaps;
 using Microsoft.EntityFrameworkCore;
-using LSCommerce.Contracts.Entities;
+using MyProject.Contracts.Entities;
 using LSCore.Repository;
 
 namespace MyProject.Repository;

@@ -1,5 +1,5 @@
 using MyProject.Contracts.Dtos.Users;
-using LSCommerce.Contracts.Entities;
+using MyProject.Contracts.Entities;
 using LSCore.Contracts.Interfaces;
 
 namespace MyProject.Contracts.DtoMaps.Users;
